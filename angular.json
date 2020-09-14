@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Project-Management"
+    }
+  },
+  "defaultProject": "Project-Management",
+  "cli": {
+    "analytics": "29aa2490-f25d-4e1f-807a-cc4a0fc76537"
+  }
 }
