@@ -1,7 +1,29 @@
 <aside class="main-sidebar">
   <section class="sidebar">
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">MAIN NAVIGATION</li>
+      
+      <ng-container *ngIf="username; else elseTemplate">
+        <li class="header">MAIN NAVIGATION</li>
+        <li>
+          <a routerLink="/">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/new/task">
+            <i class="fa  fa-plus"></i> <span>New Task</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/new/project">
+            <i class="fa  fa-plus"></i> <span>New Project</span>
+          </a>
+        </li>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <li class="header">Plase Login</li>
+      </ng-template>
+      
     </ul>
   </section>
 </aside>

@@ -123,6 +123,7 @@
   },
   "defaultProject": "Project-Management",
   "cli": {
-    "analytics": "29aa2490-f25d-4e1f-807a-cc4a0fc76537"
+    "defaultCollection": "@ngrx/schematics",
+    "analytics": "dec4106a-675a-48ac-b29c-8a48b5b43da1"
   }
 }

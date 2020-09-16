@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import axios from 'axios'
 import { Router, Routes, RouterModule } from '@angular/router';
 
 
@@ -11,19 +11,33 @@ import { Router, Routes, RouterModule } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private router: Router) { }
-  username: string = 'test';
+  username: string = '';
   password: string = '';
   setUsername(name) {
     this.username = name
   }
   ngOnInit(): void {
   }
-  onLogin() {
-    /*
-    localStorage.userID = this.username
-    this.router.navigate(['']);
-    */
-    alert(this.username)
+  async onLogin() {
+    let result;
+    await axios.get('http://localhost:3000/login',{
+      params:{
+        username:this.username,
+        password:this.password
+      }
+    }).then(res =>{
+      result = res.data[0]
+      console.log(result)
+      if(result == undefined){
+        alert("username or password incorrect")
+      }else{
+        localStorage.userID = result.memberID
+        this.router.navigate([''])
+      }
+    })
+    
+    //this.router.navigate(['']);
+    
   }
 
 }

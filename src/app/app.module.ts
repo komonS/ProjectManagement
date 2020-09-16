@@ -9,6 +9,17 @@ import { FooterComponent } from './footer/footer.component';
 import { ControlComponent } from './control/control.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { TaskDashComponent } from './task-dash/task-dash.component';
+import { ProjectDashComponent } from './project-dash/project-dash.component';
+import { ProjectTableComponent } from './project-table/project-table.component';
+import { TaskTableComponent } from './task-table/task-table.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { TaskAllComponent } from './task-all/task-all.component';
+import { ProjectAllComponent } from './project-all/project-all.component';
+import { TaskAddComponent } from './task-add/task-add.component';
+import { ProjectAddComponent } from './project-add/project-add.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +29,24 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     ControlComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    TaskDashComponent,
+    ProjectDashComponent,
+    ProjectTableComponent,
+    TaskTableComponent,
+    TaskAllComponent,
+    ProjectAllComponent,
+    TaskAddComponent,
+    ProjectAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
