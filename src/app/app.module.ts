@@ -20,6 +20,7 @@ import { TaskAllComponent } from './task-all/task-all.component';
 import { ProjectAllComponent } from './project-all/project-all.component';
 import { TaskAddComponent } from './task-add/task-add.component';
 import { ProjectAddComponent } from './project-add/project-add.component';
+import { TaskViewComponent } from './task-view/task-view.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProjectAddComponent } from './project-add/project-add.component';
     TaskAllComponent,
     ProjectAllComponent,
     TaskAddComponent,
-    ProjectAddComponent
+    ProjectAddComponent,
+    TaskViewComponent
   ],
   imports: [
     BrowserModule,

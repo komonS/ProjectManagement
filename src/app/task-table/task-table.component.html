@@ -31,8 +31,27 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody id="show_task_detail">
-
+                <tbody>
+                    <tr *ngFor="let item of task">
+                        <td>
+                            {{item.projectName}}
+                        </td>
+                        <td>
+                            {{item.subProjectName}}
+                        </td>
+                        <td>
+                            {{item.subProjectDetailName}}
+                        </td>
+                        <td>
+                            {{item.project_status_Name}}
+                        </td>
+                        <td>
+                            <a [routerLink]="[ '/task/view', item.subProjectDetail_ID ]">
+                                <button class="btn btn-info">View</button>
+                            </a>
+                            
+                        </td>
+                    </tr>
 
 
                 </tbody>

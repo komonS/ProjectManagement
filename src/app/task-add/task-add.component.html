@@ -1,1 +1,49 @@
-<p>task-add works!</p>
+<div>
+    <h3 class="text-center">Personal Task</h3>
+      <div class="form-group">
+        <label>Subject</label>
+        <input [(ngModel)]="name" type="text" name="subject" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Discription</label>
+        <textarea [(ngModel)]="discript" name="destcript" class="form-control" rows="15"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Start Date</label>
+        <input [(ngModel)]="start" type="date" name="date_from"  class="form-control">
+      </div>
+      <div class="form-group">
+        <label>End Date</label>
+        <input [(ngModel)]="end" type="date" name="date_end"  class="form-control ">
+      </div>
+      <div class="form-group">
+        <label>Success Date</label>
+        <input [(ngModel)]="success" type="date" name="date_success" class="form-control" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>Priority</label>
+        <select [(ngModel)]="priority" name="priority" class="form-control">
+            <option value="" > -- SELECT -- </option>
+            <option *ngFor="let item of priorityData" [value]="item.priorityID"> {{item.priorityName}} </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Status</label>
+        <select [(ngModel)]="status" name="status" class="form-control">
+            <option  value="" >  -- SELECT -- </option>
+            <option *ngFor="let item of statusData" [value]="item.project_status_ID"> {{item.project_status_Name}} </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Comment</label>
+        <textarea [(ngModel)]="comment" name="comment" class="form-control" rows="15"></textarea>
+      </div>
+      <div class="form-group">
+        <label>File</label>
+        <input type="file" name="userfile" class="form-control">
+      </div>
+      <div class="text-center">
+        <button (click)="onSubmit()" class="btn btn-success">Submit</button>
+      </div>
+      
+  </div>

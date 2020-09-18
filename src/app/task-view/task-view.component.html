@@ -1,0 +1,63 @@
+<div>
+    <input type="hidden" name="taskID" value="">
+    <input type="hidden" name="subprojectID" value="">
+    <div class="form-group">
+        <label>Subject</label>
+        <input type="text" name="subject" class="form-control" [(ngModel)]="subject">
+    </div>
+    <div class="form-group">
+        <label>Discription</label>
+        <textarea name="destcript" class="form-control" rows="15" [(ngModel)]="descript"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Order Name</label>
+        <input type="text" name="osubject" class="form-control" [(ngModel)]="ordername">
+    </div>
+    <div class="form-group">
+        <label>Start Date</label>
+        <input type="date" name="date_from" class="form-control" [(ngModel)]="date_from">
+    </div>
+    <div class="form-group">
+        <label>End Date</label>
+        <input type="date" name="date_end" class="form-control" [(ngModel)]="date_end">
+    </div>
+    <div class="form-group">
+        <label>Completed Date</label>
+        <input type="date" name="date_success" class="form-control" [(ngModel)]="date_success">
+    </div>
+    <div class="form-group">
+        <label>Priority</label>
+        <select [(ngModel)]="priority" name="priority" class="form-control">
+            <ng-container *ngFor="let item of priorityData">
+                <ng-container *ngIf="priorityID == item.priorityID ; else elseTemplate">
+                    <option  [value]="item.priorityID " selected> {{item.priorityName}}</option>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <option  [value]="item.priorityID " > {{item.priorityName}}</option>
+                </ng-template>
+            </ng-container>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Status</label>
+        <select [(ngModel)]="status"  name="status" class="form-control">
+            <ng-container *ngFor="let item of statusData">
+                <ng-container *ngIf="statusID == item.project_status_ID; else elseTemplate">
+                    <option  [value]="item.project_status_ID" selected> {{item.project_status_Name}}</option>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <option  [value]="item.project_status_ID" > {{item.project_status_Name}}</option>
+                </ng-template>
+            </ng-container>
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Comment</label>
+        <textarea name="comment" class="form-control" rows="10" [(ngModel)]="comment"></textarea>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-success">Save</button>
+        <button type="button" data-target="#addfile" data-toggle="modal" class="btn btn-success">Addfile</button>
+    </div>
+</div>

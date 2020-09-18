@@ -6,9 +6,13 @@ import {TaskAllComponent} from './task-all/task-all.component'
 import {ProjectAllComponent} from './project-all/project-all.component'
 import {TaskAddComponent} from './task-add/task-add.component'
 import {ProjectAddComponent} from './project-add/project-add.component'
+import {TaskViewComponent} from './task-view/task-view.component'
 const routes: Routes = [
   {
     path: 'login',component:LoginComponent
+  },
+  {
+    path: 'task/view/:id',component:TaskViewComponent
   },
   {
     path: 'new/task',component:TaskAddComponent

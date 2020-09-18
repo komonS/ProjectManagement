@@ -31,7 +31,38 @@
 				</tr>
 			</thead>
 			<tbody id="task_data" >
-				
+				<tr *ngFor="let item of task">
+					<td>
+						{{item.projectName}}
+					</td>
+					<td>
+						{{item.fname}} {{item.lname}}
+					</td>
+					<td>
+						{{item.subProjectName}}
+					</td>
+					<td>
+						{{item.subProjectDetailName}}
+					</td>
+					<td>
+						{{item.subProjectStart | date:'dd-MM-yyyy'}}
+					</td>
+					<td>
+						{{item.subProjectEnd | date:'dd-MM-yyyy'}}
+					</td>
+					<td>
+						{{item.subProjectComment}}
+					</td>
+					<td>
+						{{item.priorityName}}
+					</td>
+					<td>
+						{{item.project_status_Name}}
+					</td>
+					<td>
+						<button class="btn btn-info">View</button>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
